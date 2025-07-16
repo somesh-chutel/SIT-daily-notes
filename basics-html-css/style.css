@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.main-cont{
+    width: 100%;
+    height: 100vh;
+}
+/* header{
+    width: 100%;
+    height: 10%;
+    background-color: brown;
+}
+
+section{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(80, 175, 29);
+    display: flex;
+}
+.left{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(220, 197, 67);
+}
+.mid{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(88, 76, 10);
+}
+.right{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(13, 191, 156);
+}
+footer{
+width: 100%;
+    height: 10%;
+    background-color: rgb(235, 139, 139);
+} */
+
+
+.new-layout{
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+header,footer{
+    width: 100%;
+    height: 10%;
+    background-color: blueviolet;
+}
+
+.first{
+   width: 100%;
+    height: 60%;
+    background-color: rgb(194, 150, 235); 
+    display: flex;
+}
+.f-left{
+    width: 40%;
+    height: 100%;
+    background-color: brown;
+}
+.f-left-top{
+    width: 100%;
+    height: 40%;
+    background-color: rgb(10, 165, 147);
+}
+.f-left-bottom{
+    width: 100%;
+    height: 60%;
+    background-color: rgb(113, 231, 217);
+}
+.f-right{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(234, 134, 134);
+}
+.f-right-top{
+    width: 100%;
+    height: 70%;
+    background-color: rgb(7, 207, 31);
+}
+.f-right-bottom{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(153, 222, 161);
+}
+.second{
+   width: 100%;
+    height: 20%;
+    background-color: rgb(49, 37, 59); 
+    display: flex;
+}
+.second-left{
+    width: 80%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.second-right{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(140, 140, 2);
+}
