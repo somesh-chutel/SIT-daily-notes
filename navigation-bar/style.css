@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-cont{
+    width: 100%;
+    height: 100vh;
+    background-image: url("nasa-Q1p7bh3SHj8-unsplash.jpg");
+    background-size: cover;
+    padding: 20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.nav-bar{
+    /* border: 1px solid rgb(237, 230, 230); */
+    display: flex;
+    background-color: rgba(141, 8, 8, 0.53);
+    border-radius: 10px;
+}
+.nav-items{
+    /* border: 1px solid red; */
+    list-style: none;
+    padding: 15px;
+    width: 120px;
+}
+
+.nav-items:hover{
+    background-color: rgb(151, 4, 4);
+}
+.dropdown{
+    position: absolute;
+    background-color: rgb(151, 4, 4);
+    top: 68px;
+    left: 380px;
+    display: none;
+}
+.v-nav:hover{
+    background-color: black;
+}
+
+.drop-toggler:hover .dropdown{
+    display: inline-block;
+}
