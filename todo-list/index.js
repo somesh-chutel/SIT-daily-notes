@@ -1,24 +1,30 @@
 let rootEl = document.getElementById("root");
 
-let todoList = [
-    {
-        id : 1,
-        title : "HTML"
-    },
-    {
-        id : 2,
-        title : "CSS"
-    },
-    {
-        id : 3,
-        title : "Bootstrap"
+function getTodoList(){
+
+    let data = localStorage.getItem("myList");
+
+    if( data === null ){
+
+        return [];
     }
-]; 
+    else{
+
+        let parsedTodo = JSON.parse(data);
+
+        return parsedTodo;
+    }
+
+}
+
+let todoList = getTodoList(); 
 
 function onStatusChange(checkId,titleId){
 
     let myTitle = document.getElementById(titleId);
     let chkEl = document.getElementById(checkId); 
+    let todoid = titleId.slice(5);
+    
 
     if( chkEl.checked ){ // true
 
@@ -26,6 +32,23 @@ function onStatusChange(checkId,titleId){
     }
     else{
         myTitle.style.textDecoration = "none";
+    }
+
+    for( each of todoList ){
+
+        if( each.id == todoid ){
+
+            if( each.isCHecked === true ){
+
+                each.isCHecked =false;
+            }
+            else{
+
+                each.isCHecked = true;
+            }
+
+        }
+
     }
 
 }
@@ -53,6 +76,9 @@ function createAndAppendTodo(todo){
     let checkBoxEl = document.createElement("input");
     checkBoxEl.type = "checkbox";
     checkBoxEl.id = checkboxId;
+    if(todo.isCHecked === true){
+        checkBoxEl.checked = true;
+    }
     checkBoxEl.onclick = function(){
         onStatusChange(checkboxId,titleId);
     }
@@ -66,6 +92,9 @@ function createAndAppendTodo(todo){
     let titleEl = document.createElement("h4");
     titleEl.textContent = todo.title;
     titleEl.id = titleId;
+    if(todo.isCHecked === true ){
+        titleEl.style.textDecoration = "line-through";
+    }
     labelEl.appendChild(titleEl);
 
     let deltBtn = document.createElement("button");
@@ -95,7 +124,8 @@ function onAddTodo(){
 
     let newTodo = {
         id : uniqueId,
-        title : userInEl
+        title : userInEl,
+        isCHecked : false
     }
 
     createAndAppendTodo( newTodo );
@@ -105,4 +135,12 @@ function onAddTodo(){
     console.log( todoList );
 
     document.getElementById("userIn").value = "";
+}
+
+function onSetitem(){
+
+    let strTodo = JSON.stringify(todoList);
+
+    localStorage.setItem("myList",strTodo)
+
 }
