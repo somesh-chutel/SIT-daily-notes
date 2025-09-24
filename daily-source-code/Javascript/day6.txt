@@ -1,0 +1,260 @@
+<-------------------JavaScript String--------------------------->
+
+Access String Characters : 
+
+You can access the characters in a string in two ways:
+
+1. Using Indexes
+
+One way is to treat strings as an array and access the character at the specified index. For example, 
+
+let message = "hello";
+
+// use index 1 to access
+// 2nd character of message
+console.log(message[1]);  // e
+
+Here, the code message[1] gives us the character at index 1 of the message string, i.e., its second character. 
+
+
+###########################################################################################################################
+
+2. Using the charAt() Method
+
+Another way is to supply the position of the character to the charAt() method. For example, 
+
+let message = "hello";
+
+// use charAt(1) to get the
+// 2nd character of message
+console.log(message.charAt(1));  // e
+
+Here, the code message.charAt(1) gives us the character at index 1 of the message string. 
+
+
+Features of JavaScript Strings
+JavaScript strings have some interesting features. The most important of these features are:
+
+1. JavaScript Strings are Immutable
+
+In JavaScript, the characters of a string cannot be changed. For example,
+
+let message = "hello";
+message[0] = "H";
+console.log(message);  // hello
+
+In the above example, we tried changing the first character of message using the code:
+
+message[0] = "H";
+
+However, this operation failed due to the immutable nature of JavaScript strings.
+
+That being said, you can successfully assign a new value to the string variable. For example,
+
+let message = "hello";
+message = "Hello";
+console.log(message);  // Hello
+
+
+
+##############################################################################################################
+
+JavaScript String length : 
+
+The length property returns the number of characters in a string For example :
+
+// defining a string
+let sentence = "I love Programiz.";
+
+// returns number of characters in the sentence string
+let len = sentence.length;
+
+console.log(len);
+
+// Output:
+// 17
+
+______________________________________________________________________
+
+JavaScript String indexOf() : 
+
+The string indexOf() method returns the index of the first occurence of the substring in a string. 
+
+const message = "JavaScript is not Java";
+
+// returns index of 'v' in first occurrence of 'va'
+const index = message.indexOf("va");
+
+console.log('index: ' + index);  // index: 2
+
+
+_______________________________________________________________________
+
+JavaScript String lastIndexOf() : 
+
+The lastIndexOf() method returns the last index of occurence of a given substring in the string : 
+
+// defining a string
+var str = "Programming";
+
+var substr = "g";
+
+// find last occurrence of "g" in str
+var result = str.lastIndexOf(substr);
+
+console.log(result);
+
+// Output: 10 
+
+______________________________________________________________________
+
+JavaScript String replace() : 
+
+The replace() method returns a new string with the specified string replaced.
+
+const message = "ball bat";
+
+// replace the first b with c
+let result = message.replace('b', 'c');
+console.log(result);
+
+// Output: call bat
+
+
+______________________________________________________________________
+
+JavaScript String replaceAll() : 
+
+The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. 
+
+const message = "ball bat";
+
+// replace all occurrence of b with c
+let result = message.replaceAll('b', 'c');
+console.log(result);
+
+// Output: call cat
+
+______________________________________________________________________
+
+JavaScript String slice() : 
+
+The slice() method extracts and returns a section of a string. 
+
+const message = "JavaScript is fun";
+
+// slice the substring from index 0 to 10
+let result = message.slice(0, 10);
+console.log(result);
+
+// Output: JavaScript
+
+
+const str = "JavaScript is a very absurd programming language.";
+
+// from index 28 to end
+console.log(str.slice(28)); // 'programming language.'
+
+// from index 4 to 14
+console.log(str.slice(4, 15)); // 'Script is a'
+
+
+
+
+const str = "JavaScript is a very absurd programming language.";
+
+// from 9th to last element till end
+console.log(str.slice(-9)); // 'language.'
+
+// from 9th to last element to 2nd to last element
+console.log(str.slice(-9, -1)); // 'language'
+
+______________________________________________________________________
+
+Javascript String startsWith() : 
+
+The startsWith() method returns true if a string begins with specified character(s). If not, it returns false. 
+
+const message = "JavaScript is fun";
+
+// check if message starts with Java
+let result = message.startsWith("Java");
+
+console.log(result);    // true
+
+// check if message starts with Script
+result = message.startsWith("Script");
+
+console.log(result);    // false 
+
+______________________________________________________________________
+
+Javascript String endsWith() :
+
+The endsWith() method returns true if a string ends with the specified string. If not, the method returns false.
+
+// string definition 
+let sentence = "Java is to JavaScript what Car is to Carpet.";
+
+// checking if the given string ends with "to Carpet."
+let check = sentence.endsWith("to Carpet.");
+
+console.log(check);    
+
+// Output
+// true
+
+______________________________________________________________________
+
+
+
+Javascript String toLowerCase() : 
+
+The toLowerCase() method returns the string converted to lowercase. 
+
+const message = "JAVASCRIPT IS FUN";
+
+// convert message to lowercase
+const lowerMessage = message.toLowerCase();
+console.log(lowerMessage);
+
+// Output: javascript is fun 
+
+
+______________________________________________________________________
+
+Javascript String toUpperCase() : 
+
+The toUpperCase() method returns the string converted to uppercase : 
+
+const message = "javascript is fun";
+
+// convert message to uppercase
+const upperMessage = message.toUpperCase();
+console.log(upperMessage);
+
+// Output: JAVASCRIPT IS FUN
+
+
+______________________________________________________________________
+
+JavaScript String trim() : 
+
+The trim() method removes whitespace from both ends of a string :
+
+const message = "   JAVASCRIPT IS FUN    ";
+
+// remove leading and trailing whitespaces
+const newMessage = message.trim();
+console.log(newMessage);
+
+// Output: JAVASCRIPT IS FUN 
+
+
+_____________________________________________________________________
+
+
+
+
+
+

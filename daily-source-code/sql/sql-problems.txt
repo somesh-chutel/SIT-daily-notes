@@ -1,0 +1,195 @@
+-- Create Sales table
+
+CREATE TABLE Sales (
+    sale_id INT PRIMARY KEY,
+    product_id INT,
+    quantity_sold INT,
+    sale_date DATE,
+    total_price DECIMAL(10, 2)
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+-- Insert sample data into Sales table
+
+INSERT INTO Sales (sale_id, product_id, quantity_sold, sale_date, total_price) VALUES
+(1, 101, 5, '2024-01-01', 2500.00),
+(2, 102, 3, '2024-01-02', 900.00),
+(3, 103, 2, '2024-01-02', 60.00),
+(4, 104, 4, '2024-01-03', 80.00),
+(5, 105, 6, '2024-01-03', 90.00);
+
+
+==========================================================
+
+-- Create Products table
+
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    unit_price DECIMAL(10, 2)
+);
+
+-- Insert sample data into Products table
+
+INSERT INTO Products (product_id, product_name, category, unit_price) VALUES
+(101, 'Laptop', 'Electronics', 500.00),
+(102, 'Smartphone', 'Electronics', 300.00),
+(103, 'Headphones', 'Electronics', 30.00),
+(104, 'Keyboard', 'Electronics', 20.00),
+(105, 'Mouse', 'Electronics', 15.00);
+
+
+=================================================================================
+
+-----------------------------Problems--------------------------------------------
+
+1. Retrieve all columns from the Sales table.
+
+sale_id	product_id	quantity_sold	sale_date	total_price
+
+1	      101	        5	        2024-01-01	 2500.00
+
+
+----------------------------------------------------------
+
+2. Retrieve the product_name and unit_price from the Products table.
+
+product_name	unit_price
+
+Laptop	        500.00
+
+-----------------------------------------------------------
+
+3. Retrieve the sale_id and sale_date from the Sales table.
+
+sale_id	sale_date
+
+1	    2024-01-01
+
+------------------------------------------------------------
+
+4. Filter the Sales table to show only sales with a total_price greater than $100.
+
+sale_id	product_id	quantity_sold	sale_date	total_price
+
+1	    101	                5	    2024-01-01	    2500.00
+2	    102	                3	    2024-01-02	    900.00
+
+-------------------------------------------------------------
+
+5. Filter the Products table to show only products in the 'Electronics' category.
+
+product_id	product_name	category	unit_price
+
+101	        Laptop	        Electronics	500.00
+102	        Smartphone	    Electronics	300.00
+103	        Headphones	    Electronics	30.00
+
+-------------------------------------------------------------
+
+6. Retrieve the sale_id and total_price from the Sales table for sales made on January 3, 2024.
+
+sale_id	total_price
+
+4	    80.00
+5	    90.00
+
+---------------------------------------------------------------
+
+7. Retrieve the product_id and product_name from the Products table for products with a unit_price greater than $100.
+
+product_id	product_name
+
+101	        Laptop
+102	        Smartphone
+
+
+----------------------------------------------------------------
+
+8. Calculate the total revenue generated from all sales in the Sales table.
+
+total_revenue
+3630.00
+
+-----------------------------------------------------------------
+
+9. Calculate the average unit_price of products in the Products table.
+
+average_unit_price
+173
+
+--------------------------------------------------------------------
+
+10. Calculate the total quantity_sold from the Sales table.
+
+total_quantity_sold
+20
+
+---------------------------------------------------------------------
+
+11. Count Sales Per Day from the Sales table
+
+sale_date	sales_count
+2024-01-01	    1
+2024-01-02	    2
+2024-01-03	    2
+
+---------------------------------------------------------------------
+
+12. Retrieve product_name and unit_price from the Products table with the Highest Unit Price
+
+product_name	unit_price
+Laptop	        500.00
+
+---------------------------------------------------------------------
+
+13. Retrieve the sale_id, product_id, and total_price from the Sales table for sales with a quantity_sold greater than 4.
+
+sale_id	    product_id	total_price
+1	        101	        2500.00
+5	        105	        90.00
+
+----------------------------------------------------------------------
+
+14. Retrieve the product_name and unit_price from the Products table, ordering the results by unit_price in descending order.
+
+product_name	unit_price
+Laptop	        500.00
+Smartphone	    300.00
+Headphones	    30.00
+Keyboard	    20.00
+Mouse	        15.00
+
+-----------------------------------------------------------------------
+
+15. Calculate the total revenue generated from sales of products in the 'Electronics' category.
+
+total_revenue
+3630.00
+
+
+------------------------------------------------------------------------
+
+16. Calculate the total quantity_sold of products in the 'Electronics' category.
+
+total_quantity_sold
+20
+
+-------------------------------------------------------------------------
+
+17. Calculate the total revenue generated from sales for each product category.
+
+category	    total_revenue
+Electronics	    3630.00
+
+--------------------------------------------------------------------------
+
+18. Identify products with total sales exceeding 30.
+
+product_name
+Headphones
+Keyboard
+Laptop
+Mouse
+Smartphone

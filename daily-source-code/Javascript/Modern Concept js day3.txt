@@ -1,0 +1,220 @@
+<-------------JS Promises------------------->
+
+1. Synchronous Execution : 
+
+Example : 
+
+alert("First Line");
+alert("Second Line");
+alert("Third Line");
+
+The code executes line by line. This behavior is called synchronous behavior, in JS alert works synchronously. 
+
+------------------------------------------------
+
+2. Asynchronous Execution 
+
+Example 1: 
+
+const url = "https://apis.ccbp.in/jokes/random";
+
+fetch(url)
+  .then((response) => {
+    return response.json();
+  })
+  .then((jsonData) => {
+    //statement-1
+    console.log(jsonData); // Object{ value:"The computer tired when it got home because it had a hard drive" }
+  });
+
+//statement-2
+console.log("fetching done"); // fetching done 
+
+
+In the above example, the second statement won’t wait until the first statement execution. In JS, fetch() works asynchronously. 
+
+________________________________________________________________________________________________________________________________________
+
+3. JS Promises : 
+
+Promise is a way to handle Asynchronous operations.
+A promise is an object that represents a result of operation that will be returned at some point in the future. 
+
+Example : 
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responseObject = fetch(url);
+
+console.log(responseObject); // Promise{ [[PromiseStatus]]:pending, [[PromiseValue]]:undefined }
+console.log("fetching done"); // fetching done 
+
+
+
+A promise will be in any one of the three states:
+
+Pending : Neither fulfilled nor rejected
+Fulfilled : Operation completed successfully
+Rejected : Operation failed
+
+--------------------------------------------------------
+
+Resolved State :
+
+When a Promise object is Resolved, the result is a value. 
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise.then((response) => {
+  console.log(response); // Response{ … }
+});
+
+--------------------------------------------------------
+
+Rejected State : alert("alert 1");
+
+Fetching a resource can be failed for various reasons like: 
+
+URL is spelled incorrectly
+Server is taking too long to respond
+Network failure error, etc. 
+
+
+const url = "https://a.ccbp.in/random";
+let responsePromise = fetch(url);
+
+responsePromise.then((response) => {
+  return response;
+});
+responsePromise.catch((error) => {
+  console.log(error); // TypeError{ "Failed to fetch" }
+});
+
+------------------------------------------------------------
+
+Promise Chaining : 
+
+Combining multiple .then()s or .catch()s to a single promise is called promise chaining. 
+
+ Chaining OnSuccess Callback again : 
+
+ const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  }); 
+
+----------------------------------------------------------------
+
+Fetch with Error Handling : 
+
+Check the behavior of code with valid and invalid URLs. 
+
+const url = "https://apis.ccbp.in/jokes/random";
+let responsePromise = fetch(url);
+
+responsePromise
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data); // Object { value: "They call it the PS4 because there are only 4 games worth playing!"
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+
+_____________________________________________________________________________________________________________________
+
+<---------------------Async/Await---------------------->
+
+The Async/Await is a modern way to consume promises. 
+
+The Await ensures processing completes before the next statement executes. 
+
+Syntax : 
+
+const myPromise = async () => {
+  let promiseObj1 = fetch(url1);
+  let response1 = await promiseObj1;
+  let promiseObj2 = fetch(url2);
+  let response2 = await promiseObj2;
+};
+
+myPromise()
+
+Note : Use async keyword before the function only if it is performing async operations.
+       Should use await inside an async function only.
+
+------------------------------------------------------------
+
+Fetch with Async and Await : 
+
+const url = "https://apis.ccbp.in/jokes/random";
+
+const doNetworkCall = async () => {
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  console.log(jsonData);
+};
+
+doNetworkCall(); 
+
+-------------------------------------------------------------
+
+Error Handling with Async and Await : 
+
+const url = "https://a.ccbp.in/jokes/random";
+
+const doNetworkCall = async () => {
+  try {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    console.log(jsonData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+doNetworkCall(); 
+
+------------------------------------------------------------
+
+_____________________________________________________________________________________________________________________
+
+<-----------------------More Array Methods-------------------------------->
+
+Map() :
+
+The map() method creates a new array with the results of calling a function for every array element.
+The map() method calls the provided function once for each element in an array, in order.
+
+const numbers = [1, 2, 3, 4];
+const result = numbers.map((number) => number * number);
+
+console.log(result); // [1, 4, 9, 16] 
+
+------------------------------------------------------
+
+filter() : 
+
+The filter() method creates a new array filled with all elements that pass the test (provided as a function).
+A new array with the elements that pass the test will be returned. If no elements pass the test, an empty array will be returned. 
+
+
+const numbers = [1, -2, 3, -4];
+const positiveNumbers = numbers.filter((number) => number > 0);
+
+console.log(positiveNumbers); // [1, 3] 
+
+-------------------------------------------------------
+
+
+_____________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________________

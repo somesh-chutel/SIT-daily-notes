@@ -1,0 +1,146 @@
+<-----------------Spread Operator--------------------------->
+
+The Spread Operator is used to unpack an iterable (e.g. an array, object, etc.) into individual elements. 
+
+1.1 Spread Operator with Arrays:
+
+let arr1 = [2, 3];
+let arr2 = [1, ...arr1, 4];
+
+console.log(arr2);  // [1, 2, 3, 4]
+
+-----------------------------------------
+
+1.1.1 Creating a Copy:
+
+let arr1 = [2, 3];
+let arr2 = [...arr1];
+
+console.log(arr2);  // [2, 3]
+
+------------------------------------------
+
+1.1.2 Concatenation : 
+
+let arr1 = [2, 3];
+let arr2 = [4, 5];
+let arr3 = [...arr1, ...arr2];
+
+console.log(arr3);  // [2, 3, 4, 5] 
+
+________________________________________________________________________________________________________________________________________
+
+1.2 Spread Operator with Objects : 
+
+let person = { name: "Rahul", age: 27 };
+let personDetails = { ...person, city: "Hyderabad" };
+
+console.log(personDetails);  // Object {name: "Rahul", age: 27, city: "Hyderabad"}
+
+------------------------------------------------------
+
+1.2.1 Creating a Copy :
+
+let person = { name: "Rahul", age: 27 };
+let personDetails = { ...person };
+
+console.log(personDetails);  // Object {name: "Rahul", age: 27} 
+
+-------------------------------------------------------
+
+1.2.2 Concatenation : 
+
+let person = { name: "Rahul", age: 27 };
+let address = { city: "Hyderabad", pincode: 500001 };
+let personDetails = { ...person, ...address };
+
+console.log(personDetails);  // Object {name: "Rahul", age: 27, city: "Hyderabad", pincode: 500001} 
+
+________________________________________________________________________________________________________________________________________
+
+1.3 Spread Operator with Function Calls : 
+
+The Spread Operator syntax can be used to pass an array of arguments to the function. 
+Extra values will be ignored if we pass more arguments than the function parameters.
+
+function add(a, b, c) {
+  return a + b + c;
+}
+let numbers = [1, 2, 3, 4, 5];
+
+console.log(add(...numbers));  // 6 
+
+________________________________________________________________________________________________________________________________________
+
+2. Rest Parameter : 
+
+With Rest Parameter, we can pack multiple values into an array. 
+
+function numbers(...args) {
+  console.log(args);  // [1, 2, 3]
+}
+
+numbers(1, 2, 3); 
+
+------------------------------------------------------------------
+
+2.1 Destructuring arrays and objects with Rest Parameter Syntax : 
+
+2.1.1 Arrays : 
+
+let [a, b, ...rest] = [1, 2, 3, 4, 5];
+
+console.log(a);  // 1
+console.log(b);  // 2
+console.log(rest);  // [3, 4, 5] 
+
+
+2.1.2 Objects :
+
+let { firstName, ...rest } = {
+  firstName: "Rahul",
+  lastName: "Attuluri",
+  age: 27
+};
+
+console.log(firstName);  // Rahul
+console.log(rest);  // Object {lastName: "Attuluri", age: 27} 
+
+
+Note : The Rest parameter should be the last parameter.
+
+------------------------------------------------------------------
+Correct Syntax :
+
+function numbers(a, b, ...rest) {
+  console.log(a);  // 1
+  console.log(b);  // 2
+  console.log(rest);  // [3, 4, 5]
+}
+numbers(1, 2, 3, 4, 5);
+
+
+Incorrect Syntax : 
+
+function numbers(a, ...rest, b) {
+  console.log(a);
+  console.log(rest);
+  console.log(b);
+}
+numbers(1, 2, 3, 4, 5);  // Uncaught SyntaxError: Rest parameter must be last formal parameter
+
+________________________________________________________________________________________________________________________________________
+
+<------------------------Ternary Operator--------------------------->
+
+A Ternary Operator can be used to replace if...else statements in some situations. 
+
+Syntax: condition ? expressionIfTrue : expressionIfFalse 
+
+let speed = 70;
+let message = speed >= 100 ? "Too Fast" : "OK";
+
+console.log(message);  // OK 
+
+
+________________________________________________________________________________________________________________________________________

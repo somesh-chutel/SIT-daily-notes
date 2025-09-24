@@ -1,0 +1,128 @@
+<------------------------JS Classes----------------------------->
+
+The class is a special type of function used for creating multiple objects. 
+
+Constructor Method : 
+The constructor method is a special method of a class for creating and initializing an object of that class.
+
+Example : 
+
+class Person {
+  constructor(firstName, lastName) {                   
+    this.firstName = firstName;
+    this.lastName = lastName;
+ }
+ displayFullName() {
+   return this.firstName + " " + this.lastName;
+ }
+}
+let person1 = new Person("Virat", "Kohli");
+
+console.log(person1);  // Person {...} 
+
+----------------------------------------
+
+Creating Multiple Objects :
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+let person1 = new Person("Virat", "Kohli");
+let person2 = new Person("Sachin", "Tendulkar");
+
+console.log(person1);  // Person {...}
+console.log(person2);  // Person {...} 
+
+_____________________________________________________________________________________________________________________
+
+<-------------------Prototype property of a Class------------------------------>
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  displayFullName() {
+   return this.firstName + " " + this.lastName;
+  }
+}
+let person1 = new Person("Virat", "Kohli");
+
+console.log(Person.prototype);  // Person {...}
+
+
+Prototype of an Instance : 
+console.log(Object.getPrototypeOf(person1));  // Person {...} 
+
+-------------------------------------------------------------------------------------------------------
+<--------------------Inheritance in JS Classes------------------------->
+
+The Inheritance is a mechanism by which a class inherits methods and properties from another class.
+
+Extends : 
+The extends keyword is used to inherit the methods and properties of the superclass. 
+
+Super : 
+Calling super() makes sure that SuperClass constructor() gets called and initializes the instance. 
+
+
+Method Overriding :
+Here the constructor method is overridden. 
+If we write the SuperClass methods in SubClass, it is called method overriding. 
+
+Example : 
+
+#############################
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  eat() {
+    return `${this.name} is eating`;
+  }
+  makeSound() {
+    return `${this.name} is shouting`;
+  }
+}
+
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  sniff() {
+    return `${this.name} is sniffing`;
+  }
+}
+class Cat extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  knead() {
+    return `${this.name} is kneading`;
+  }
+}
+let animal1 = new Animal("gorilla");
+let someDog = new Dog("someDog", "German Shepherd");
+let persianCat = new Cat("someCat", "Persian Cat");
+
+console.log(animal1);  // Animal {...}
+console.log(animal1.eat());  // gorilla is eating
+
+console.log(someDog);  // Dog {...}
+console.log(someDog.eat());  // someDog is eating 
+console.log(someDog.sniff());  // someDog is sniffing
+
+console.log(persianCat);  // Cat {...}
+console.log(persianCat.knead());  // someCat is kneading
+console.log(persianCat.eat());  // someCat is eating
+console.log(persianCat.makeSound());  // someCat is shouting
+
+###############################
+

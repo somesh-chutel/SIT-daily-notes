@@ -1,0 +1,37 @@
+                       The SQL WHERE Clause
+					   
+The WHERE clause is used to filter records.
+
+The WHERE clause is used to extract only those records that fulfill a specified condition.
+
+Syntax:     
+
+SELECT column1, column2, ...*
+FROM table_name
+WHERE condition;    
+
+Note: The WHERE clause is not only used in SELECT statement, it is also used in UPDATE, DELETE statement, etc.!
+
+SELECT * FROM Products
+WHERE Price = 18;
+
+SELECT * FROM Products
+WHERE Price > 30;
+
+SELECT * FROM Products
+WHERE Price < 30;
+
+SELECT * FROM Products
+WHERE Price >= 30;
+
+SELECT * FROM Products
+WHERE Price <= 30;
+
+SELECT * FROM Products
+WHERE Price <> 18;
+
+
+
+
+
+                   

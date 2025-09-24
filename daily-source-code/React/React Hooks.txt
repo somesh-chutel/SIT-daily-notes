@@ -1,0 +1,119 @@
+<-------------React Hooks------------------->
+
+Hooks were added to React in version 16.8.
+Hooks allow function components to have access to state and other React features. 
+Because of this, class components are generally no longer needed.
+
+What is a Hook?
+===============  
+Hooks allow us to "hook" into React features such as state and lifecycle methods.
+
+Hook Rules : 
+============
+
+There are 3 rules for hooks:
+
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional.
+
+Note: Hooks will not work in React class components. 
+
+--------------------------------------------------------------------------------------------------------------
+
+Component Lifecycle : 
+====================
+
+1. Initialize Component.
+2. Component Mounting.
+3. Component Updation 
+4. Component Unmount.
+
+
+
+                    <-----------:React useState Hook:---------------> 
+                                =====================
+
+The React useState Hook allows us to track state in a function component.
+State generally refers to data or properties that need to be tracking in an application.
+
+
+Import useState :
+=================
+To use the useState Hook, we first need to import it into our component.
+import { useState } from "react";
+Notice that we are destructuring useState from react as it is a named export.
+
+
+Initialize useState :
+=====================
+We initialize our state by calling useState in our function component.
+
+useState accepts an initial state and returns two values:
+1. The current state.
+2. A function that updates the state.
+
+syntax : 
+
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("");
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+                    <-----------:React useEffect Hook:---------------> 
+                                =====================
+
+The useEffect Hook allows you to perform side effects in your components.
+
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+
+useEffect accepts two arguments. The second argument is optional.
+
+useEffect(<function>, <dependency>)
+
+Example : 
+
+1. No dependency passed:
+
+useEffect(() => {
+  //Runs on every render
+});
+
+
+Example :
+
+2. An empty array:
+
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+
+
+Example : 
+
+3. Props or state values:
+
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes
+}, [prop, state]);
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+                    <-----------:React useRef Hook:---------------> 
+                                =====================
+
+The useRef Hook allows you to persist values between renders.
+It can be used to store a mutable value that does not cause a re-render when updated.
+It can be used to access a DOM element directly.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                    <------------:Custom Hook:-------------------->
+
+                    
+

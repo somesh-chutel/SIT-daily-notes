@@ -1,0 +1,225 @@
+
+JavaScript is the world's most popular programming language.
+
+JavaScript is the programming language of the Web.
+
+JavaScript is easy to learn.
+
+Every version of JavaScript:
+
+The Original JavaScript ES1 ES2 ES3 (1997-1999)
+The First Main Revision ES5 (2009)
+The Second Revision ES6 (2015)
+The Yearly Additions (2016, 2017 ... 2021, 2022)
+
+
+############################################################################################
+
+INTRODUCTION : 
+
+JavaScript and Java are completely different languages, both in concept and design.
+
+JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
+
+-262ECMA is the official name of the standard. ECMAScript is the official name of the language.
+
+
+############################################################################################
+
+HOW TO USE : 
+
+In HTML, JavaScript code is inserted between <script> and </script> tags.
+
+Example : 
+<script>
+
+    console.log("Hello World);
+
+</script>
+
+JavaScript in <head> or <body>
+
+You can place any number of scripts in an HTML document.
+
+Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
+
+
+-------->
+
+JavaScript in Head :
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+        console.log("Hello World)
+
+</script>
+</head>
+<body>
+        <h2>Demo JavaScript in Head</h2>
+
+        <p> Hello World </p>
+
+
+</body>
+</html>
+
+
+------->
+
+JavaScript in Body : 
+
+<!DOCTYPE html>
+<html>
+<body>
+
+            <h2>Demo JavaScript in Body</h2>
+
+            <p> Hello World </p>
+
+<script>
+
+            console.log("Hello World);
+
+</script>
+
+</body>
+</html>
+
+
+#######################################################################
+
+External JavaScript
+
+
+Scripts can also be placed in external files:
+
+External scripts are practical when the same code is used in many different web pages.
+
+JavaScript files have the file extension .js.
+
+To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+
+<script src="myScript.js"></script>
+
+External JavaScript Advantages
+
+Placing scripts in external files has some advantages:
+
+It separates HTML and code
+It makes HTML and JavaScript easier to read and maintain
+Cached JavaScript files can speed up page loads
+To add several script files to one page  - use several script tags:
+
+<script src="myScript1.js"></script>
+<script src="myScript2.js"></script>
+
+
+#######################################################################################
+
+Variables are Containers for Storing Data
+JavaScript Variables can be declared in 4 ways:
+
+Automatically
+Using var
+Using let
+Using const
+
+In this first example, x, y, and z are undeclared variables.
+
+They are automatically declared when first used:
+
+Example
+x = 5;
+y = 6;
+z = x + y;
+
+
+Note
+It is considered good programming practice to always declare variables before use.
+
+
+The var keyword was used in all JavaScript code from 1995 to 2015.
+
+The let and const keywords were added to JavaScript in 2015.
+
+The var keyword should only be used in code written for older browsers.
+
+Example : 
+
+let x = 5;
+let y = 6;
+let z = x + y;
+
+
+Example : 
+
+const x = 5;
+const y = 6;
+const z = x + y;
+
+Example :
+
+const price1 = 5;
+const price2 = 6;
+let total = price1 + price2;
+
+The two variables price1 and price2 are declared with the const keyword.
+
+These are constant values and cannot be changed.
+
+The variable total is declared with the let keyword.
+
+The value total can be changed.
+
+
+When to Use var, let, or const?
+
+1. Always declare variables
+
+2. Always use const if the value should not be changed
+
+3. Always use const if the type should not be changed (Arrays and Objects)
+
+4. Only use let if you can't use const
+
+
+#######################################################################################
+
+JavaScript Identifiers
+
+All JavaScript variables must be identified with unique names.
+
+These unique names are called identifiers.
+
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+The general rules for constructing names for variables (unique identifiers) are:
+
+Names can contain letters, digits, underscores, and dollar signs.
+Names must begin with a letter.
+Names can also begin with $ and _ 
+Names are case sensitive (y and Y are different variables).
+Reserved words (like JavaScript keywords) cannot be used as names.
+
+The Assignment Operator : 
+
+In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.
+
+
+##########################################################################################################
+
+Case Convension : 
+
+        there are three types of cases in languages. 
+
+        1. Snake_case ( my_name )// all letters will be smal in case and we join two words using ("_")
+
+        2. camelCase ( myNameCheck ) // The first word should be small in case and the nexth word first letter should be capital and we join two word using next word first letter in Caps.
+
+        3. PascleCase ( MyName )
+
+
+

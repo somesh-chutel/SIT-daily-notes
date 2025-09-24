@@ -1,0 +1,247 @@
+<----------------JavaScript Function Defination and Function Expressions-------------------------->
+
+A function is an independent block of code that performs a specific task,
+while a function expression is a way to store functions in variables.
+Majorly there are three types of function in Javascript:
+
+1. Function Definition.
+2. Function Expression.
+3. Arrow Function. 
+4. Callbacks.
+
+Create a JavaScript Function : 
+
+We can create a function in JavaScript using the function keyword: 
+
+function greet() {
+
+    console.log("Hello World!");
+    
+} 
+
+
+JavaScript Function Defination : 
+
+// create a function named greet()
+function greet() {
+    console.log("Hello World!");
+}
+
+// store a function in the displayPI variable
+// this is a function expression
+let displayPI = function() {
+    console.log("PI = 3.14");
+}
+
+// call the greet() function
+greet();
+
+// call the reply() function
+displayPI();
+
+// Output:
+// Hello World!
+// PI = 3.14 
+
+
+Here, we have created a simple function named greet() that prints Hello World! on the screen.
+
+Our function contains the following parts:
+
+Function Keyword - The function keyword is used to create the function.
+Function Name - The name of the function is greet, followed by parentheses ().
+Function Body - The code that is executed when we call the function. In our case, it is console.log("Hello World!");
+
+Benefits of Using a Function
+Suppose you need to write a program Sum of two values and and product of it. You can create two functions to solve this problem:
+
+A function for sum of two values.
+A function for product of two values.
+From this example, we can see that functions provide the following benefits:
+
+Reusable Code: Since functions are independent blocks of code, you can declare a function once and use it multiple times.
+Organized Code: Dividing small tasks into different functions makes our code easy to organize.
+Readability: Functions increase readability by reducing redundancy and improving the structure of our code.
+
+____________________________________________________________________________________________________________________
+
+Call a Function : 
+
+Previously, we declared a function named greet(): 
+
+function greet() {
+   console.log("Hello World!");
+} 
+
+If we run the above code, we won't get any output. But why?
+
+It's because creating a function doesn't mean we are executing the code inside it. In other words, the code is there for us to use if we want to.
+
+And if we want to use the function, we need to call it.
+
+Function Call
+
+greet(); 
+
+As you can see, we call a function by writing the function name (greet) followed by parentheses (). 
+
+
+Example 1: JavaScript Function Call : 
+
+// create a function
+function greet() {
+    console.log("Hello World!");
+}
+
+// call the function
+greet();
+
+console.log("Outside function");
+
+Output
+
+Hello World!
+Outside function 
+
+____________________________________________________________________________________________________________________
+
+<--------------JavaScript Function Arguments--------------------->
+
+Arguments are values you pass to the function when you call it. 
+
+// function with a parameter called 'name'
+function greet(name) {
+    console.log(`Hello ${name}`);
+}
+
+// pass argument to the function
+greet("John");
+
+// Output: Hello John 
+
+In the above example, we passed "John" as an argument to the greet() function. 
+
+____________________________________________________________________________________________________________________
+
+Pass Different Arguments to the Function : 
+
+We can pass different arguments in each call, making the function re-usable and dynamic. 
+
+function greet(name) {
+    console.log(`Hello ${name}`);
+}
+
+// pass "John" as argument
+greet("John");
+
+// pass "David" as argument
+greet("David"); 
+
+Output
+
+Hello John
+Hello David 
+
+____________________________________________________________________________________________________________________
+
+Example 2: JavaScript Function to Add Two Numbers : 
+
+We can also pass multiple arguments to a single function. For example, 
+
+// function with two arguments
+function addNumbers(num1, num2) {
+    let sum = num1 + num2;
+   console.log(`Sum: ${sum}`);
+}
+
+// call function by passing two arguments
+addNumbers(5, 4);
+
+// Output:
+// Sum: 9 
+
+In the above example, we have created a function named addNumbers() with two parameters: num1 and num2. Here,
+
+num1 takes the value of the first argument, 5.
+num2 takes the value of the second argument, 4. 
+
+____________________________________________________________________________________________________________________
+
+The return Statement : 
+
+We can return a value from a JavaScript function using the return statement. 
+
+// function definition
+function findSquare(num) {
+    let result = num * num;
+
+    // returns the value of result
+    // to the function call
+    return result;
+}
+
+// call the function and store the
+// return value in square variable
+let square = findSquare(3);
+
+// print the return value
+console.log(`Square: ${square}`); 
+
+Output
+
+Square: 9 
+
+____________________________________________________________________________________________________________________
+
+The return Statement Terminates the Function : 
+
+Any code written in the function after the return statement is not executed. For example, 
+
+function display() {
+
+    console.log("This will be executed.");
+
+    return "Returning from function.";
+
+    console.log("This will not be executed.");
+}
+
+let message = display();
+console.log(message);   
+
+Output
+
+This will be executed.
+Returning from function.
+
+
+In this example, the display() function doesn't execute the second console.log() statement inside it.
+
+This is because the function execution stops at the return statement. So, the following code is never reached: 
+
+console.log("This will not be executed."); 
+
+Instead, this is what actually happens:
+
+First, the function prints This will be executed. to the screen.
+Then, it returns the string Returning from function. to the function call.
+Finally, the function terminates its execution.
+The return value is then stored in the message variable and printed. 
+
+____________________________________________________________________________________________________________________
+
+<---------------------Function Expressions----------------------------->
+
+In JavaScript, a function expression is a way to store functions in variables. For example, 
+
+// store a function in the square variable
+let square = function(num) {
+    return num * num;
+};
+
+console.log(square(5));  
+
+// Output: 25 
+
+____________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________

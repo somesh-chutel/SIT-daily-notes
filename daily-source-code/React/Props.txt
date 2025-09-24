@@ -1,0 +1,79 @@
+<-----------------------React Props-------------------------->
+
+props stands for properties.
+React Props are like function Parameter in JavaScript and attributes in HTML.
+To send props into a component, use the same syntax as HTML attributes.
+
+Example : 
+
+Add a "brand" attribute to the Car element:
+
+const myElement = <Car brand="Ford" />;
+
+
+The component receives the argument as a props object: 
+
+Example : 
+
+Use the brand attribute in the component:
+
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Example : 
+
+import Home from "./components/home/index";
+
+const App = () => {
+
+    const persDetails = {
+        username : "SomeshChutel",
+        name:"Somesh Chutel",
+        id : 12352,
+        isActive : "Active",
+        domain : "Fullstack web dev",
+        location : "Nagpur"
+    }
+
+
+  return (
+    <>
+      <Home  person = {persDetails}/>
+    </>
+  );
+};
+
+export default App;
+
+
+---------------------------------
+
+import './index.css'
+
+const Home = (props)=>{
+
+    const {person} = props;
+    const {name,domain,location} = person;
+
+    return(
+
+        <>
+        <h1>We are getting person details from App Component with the help of props</h1>
+
+        {/* here we are using template literals for embading variable in text content  */}
+        <h2>{`The present developer is Mr. ${name}`}</h2> 
+        <h3>{`Location : ${location}`}</h3>
+        <h3>{`Domain : ${domain}`}</h3>
+
+        </>
+
+    )
+}
+
+
+
+export default Home;

@@ -1,0 +1,41 @@
+                             SQL JOIN
+						
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+Let's look at a selection from the "Orders" table:
+
+Notice that the "CustomerID" column in the "Orders" table refers to the "CustomerID" in the "Customers" table. The relationship between the two tables above is the "CustomerID" column.
+
+Then, we can create the following SQL statement (that contains an INNER JOIN), that selects records that have matching values in both tables:
+
+Example:
+
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders(table 1)
+INNER JOIN Customers(table 2) ON Orders.CustomerID=Customers.CustomerID;
+
+                       Different Types of SQL JOINs
+
+Here are the different types of the JOINs in SQL:
+
+(INNER) JOIN: Returns records that have matching values in both tables.
+
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table.
+
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table.
+
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table.
+
+
+
+              INNER JOIN ---> Exact Matching values --> Display
+
+              LEFT JOIN ----> Complete data from T1 + Matching values from T2
+
+              RIGHT JOIn ---> Complete data from T2 + maching Values from T1
+
+              Xampp , oracle , MS-ACCESS , SQL SERVER , MYSQL CE EE , Workbench
+
+              html 
+                             

@@ -1,0 +1,61 @@
+<---------------------What is JSX?---------------------->
+
+JSX stands for JavaScript XML.
+JSX allows us to write HTML in React.
+JSX makes it easier to write and add HTML in React.
+
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+JSX converts HTML tags into react elements.
+
+------------------------------------------------------------------------------------------------------------------
+<-------------------React Components------------------>
+
+Components are like functions that return HTML elements. 
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, 
+but work in isolation and return HTML.Components come in two types, Class components and Function components,
+
+Note : In older React code bases, you may find Class components primarily used. 
+       It is now suggested to use Function components along with Hooks, which were added in React 16.8.
+
+
+Create Your First Component : 
+===========================
+
+When creating a React component, the component's name MUST start with an upper case letter. 
+
+Class Component:
+===============
+
+A class component must include the extends React.Component statement. 
+This statement creates an inheritance to React.Component, and gives your component access to React.Component's functions.
+The component also requires a render() method, this method returns HTML.
+
+Example : 
+
+Create a Class component called Car.
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+
+
+
+Function Component :
+====================
+
+Here is the same example as above, but created using a Function component instead.
+A Function component also returns HTML, and behaves much the same way as a Class component, 
+but Function components can be written using much less code, are easier to understand.
+
+Example :
+
+Create a Function component called Car
+
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+
+____________________________________________________________________________________________________________________

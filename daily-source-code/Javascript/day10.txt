@@ -1,0 +1,215 @@
+<--------------------JavaScript Objects----------------------->
+
+JavaScript object is a variable that can store multiple data in key-value pairs. 
+
+Create JavaScript Objects : 
+
+The syntax of JavaScript object is: 
+
+const objectName = {
+    key1: value1,
+    key2: value2,
+    ...,
+    keyN: valueN
+}; 
+
+Here,
+
+objectName - Name of the object.
+key1: value1 - The first key-value pair.
+key2: value2 - The second key-value pair.
+keyN: valueN - The Nth key-value pair.
+Each key-value pair has a colon : between them and is separated by a comma ,. 
+
+____________________________________________________________________________________________________________________________________________
+
+Example 1: JavaScript Objects :
+
+// create person object
+const person = {
+    name: "John",
+    age: 20
+};
+
+console.log(person);
+
+// Output: { name: "John", age: 20 }
+
+In the above example, name: "John" and age: 30 are key-value pairs. 
+
+Note: You can also create objects in a single line. For example,
+
+const person = { name: "John", age: 20 };
+However, it's preferable to break down objects into multiple lines for better readability.
+
+____________________________________________________________________________________________________________________________________________
+
+Access Object Properties :
+
+1. Using Dot Notation 
+
+const dog = {
+    name: "Rocky",
+};
+
+// access property
+console.log(dog.name);
+
+// Output: Rocky 
+
+--------------------------------------------------------------------------
+
+2. Using Bracket Notation 
+
+const cat = {
+    name: "Luna",
+};
+
+// access property
+console.log(cat["name"]);
+
+// Output: Luna
+
+____________________________________________________________________________________________________________________________________________
+
+JavaScript Object Operations
+
+In JavaScript, we can perform various operations on object properties like modifying, adding, deleting, and so on. Let's discuss some of them.
+
+1. Modify Object Properties
+We can modify object properties by assigning a new value to an existing key. For example, 
+
+const person = {
+    name: "Bobby",
+    hobby: "Dancing",
+};
+
+// modify property
+person.hobby = "Singing";
+
+// display the object
+console.log(person);
+
+// Output: { name: 'Bobby', hobby: 'Singing' }
+
+In the above example, we used the dot notation to change the value of the hobby key from Dancing to Singing.
+
+____________________________________________________________________________________________________________________________________________
+
+2. Add Object Properties : 
+
+const student = {
+    name: "John",
+    age: 20,
+};
+
+// add properties
+student.rollNo = 14;
+student.faculty = "Science";
+
+// display the object
+console.log(student);
+
+// Output: { name: 'John', age: 20, rollNo: 14, faculty: 'Science' } 
+
+In the above example, the keys rollNo and faculty do not exist within the object. 
+Hence, when we assign values to these keys, new properties are added to the object. 
+
+____________________________________________________________________________________________________________________________________________
+
+3. Delete Object Properties :
+
+We can remove properties from an object using the delete operator. For example, 
+
+const employee = {
+    name: "Tony",
+    position: "Officer",
+    salary: 30000,
+};
+
+// delete object property
+delete employee.salary
+
+// display the object
+console.log(employee);
+
+// Output: { name: 'Tony', position: 'Officer' } 
+
+____________________________________________________________________________________________________________________________________________
+
+JavaScript Object Methods
+
+We can also include functions inside an object. For example,
+
+const person = {
+    name: "Bob",
+    age: 30,
+
+    // use function as value
+    greet: function () {
+        console.log("Bob says Hi!");
+    }
+};
+
+// call object method
+person.greet();  // Bob says Hi! 
+
+Here, we have assigned a function as a value for the greet key.
+
+These functions that are defined inside objects are called methods. 
+
+Note: Just like we use () to call a function, we must use () to call methods. 
+
+____________________________________________________________________________________________________________________________________________
+
+JavaScript Nested Objects :
+
+What is a nested object?
+A nested object contains another object as a property. For example, 
+
+// outer object student
+const student = {
+    name: "John",
+    age: 20,
+
+    // contains another object marks
+    marks: {
+        science: 70,
+        math: 75
+    }
+};
+
+// display student
+console.log(student);
+
+
+// Output: { name: 'John', age: 20, marks: { science: 70, math: 75 } }
+
+In the above example, the student object contains another object nested inside it called marks. 
+
+____________________________________________________________________________________________________________________________________________
+
+Access Properties of Nested Objects
+
+We can access a nested object's property using both the dot and bracket notations.
+
+const student = {
+    name: "John",
+    age: 20,
+
+    marks: {
+        science: 70,
+        math: 75
+    }
+};
+
+// use dot notation
+console.log(student.marks.science);  // 70
+
+
+// use bracket notation
+console.log(student["marks"]["math"]);  // 75
+
+____________________________________________________________________________________________________________________________________________
+
+

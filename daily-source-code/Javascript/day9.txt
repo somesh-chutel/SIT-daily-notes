@@ -1,0 +1,486 @@
+<----------------------JavaScript Array--------------------------->
+
+An array is an object that can store multiple values at once. 
+
+const age = [17, 18, 15, 19, 14]; 
+
+Why Use Arrays?
+
+Arrays allow us to organize related data by grouping them within a single variable.
+
+Suppose you want to store a list of fruits. Using only variables, 
+this process might look like this: 
+
+let fruit1 = "Apple";
+let fruit2 = "Banana";
+let fruit3 = "Orange"; 
+
+Here, we've only listed a few fruits. But what if we need to store 100 fruits?
+
+For such a case, the easiest solution is to store them in an array. 
+
+let fruits = ["Apple", "Banana", "Orange", ...]; 
+
+An array can store many values in a single variable, 
+making it easy to access them by referring to the corresponding index number.
+
+Create an Array : 
+
+We can create an array by placing elements inside an array literal [], separated by commas. For example,
+
+const numbers = [10, 30, 40, 60, 80]; 
+
+Here,
+
+numbers - Name of the array.
+[10, 30, 40, 60, 80] - Elements of the array. 
+
+----------------------------------------------------------------------------------------------------
+
+<-----------------Access Elements of an Array----------------->
+
+Each element of an array is associated with a number called an index, which specifies its position inside the array. 
+
+Consider the following array: 
+
+let numbers = [10, 30, 40, 60, 80]; 
+
+Here is the indexing of each element: 
+
+let numbers = [10, 30, 40, 60, 80]; -->0,1,2,3,4
+
+We can use an array index to access the elements of the array.
+
+Code	        Description
+---------------------------------------------
+numbers[0]	    Accesses the first element 10.
+numbers[1]	    Accesses the second element 30.
+numbers[2]	    Accesses the third element 40.
+numbers[3]	    A  ccesses the fourth element 60.
+numbers[4]	    Accesses the fifth element 80.
+
+
+Let's look at an example : 
+
+let numbers = [10, 30, 40, 60, 80]
+
+// access first element
+console.log(numbers[0]);  // 10
+
+// access third element
+console.log(numbers[2]);  // 40 
+
+Remember: Array indexes always start with 0, not 1. 
+
+________________________________________________________________________________________________
+
+<----------------Add Element to an Array------------------------>
+
+We can add elements to an array using built-in methods like push() and unshift().
+
+
+
+1. Using the push() Method : 
+
+The push() method adds an element at the end of the array.
+
+let dailyActivities = ["eat", "sleep"];
+
+// add an element at the end
+dailyActivities.push("exercise");
+
+console.log(dailyActivities);
+
+// Output: [ 'eat', 'sleep', 'exercise' ]
+
+
+2. Using the unshift() Method : 
+
+The unshift() method adds an element at the beginning of the array. 
+
+let dailyActivities = ["eat", "sleep"];
+
+// add an element at the beginning
+dailyActivities.unshift("work"); 
+
+console.log(dailyActivities);
+
+// Output: [ 'work', 'eat', 'sleep' ] 
+
+________________________________________________________________________________________________
+
+<----------------Change the Elements of an Array----------------->
+
+We can add or change elements by accessing the index value. For example, 
+
+let dailyActivities = [ "eat", "work", "sleep"];
+
+// change the second element
+// use array index 1
+dailyActivities[1] = "exercise";
+
+console.log(dailyActivities);
+
+// Output: [ 'eat', 'exercise', 'sleep' ] 
+
+Here, we changed the array element in index 1 (second element) from work to exercise. 
+
+
+________________________________________________________________________________________________
+
+<---------------------Remove Elements From an Array----------------------->
+
+We can remove an element from any specified index of an array using the splice() method. 
+
+let numbers = [1, 2, 3, 4, 5];
+
+// remove one element
+// starting from index 2
+numbers.splice(2, 1);
+
+console.log(numbers);
+
+// Output: [ 1, 2, 4, 5 ] 
+
+In this example, we removed the element at index 2 (the third element) using the splice() method. 
+
+Notice the following code: 
+
+numbers.splice(2, 1); 
+
+Here, (2, 1) means that the splice() method deletes one element starting from index 2. 
+
+Note: Suppose you want to remove the second, third, and fourth elements. You can use the following code to do so: 
+
+numbers.splice(1, 3); 
+
+________________________________________________________________________________________________
+
+Remove the last element using pop().
+
+let dailyActivities = ['work', 'eat', 'sleep', 'exercise'];
+
+// remove the last element
+dailyActivities.pop();
+
+console.log(dailyActivities);
+
+// Output: [ 'work', 'eat', 'sleep' ] 
+
+________________________________________________________________________________________________
+
+Remove the first element using shift(). 
+
+let dailyActivities = ['work', 'eat', 'sleep', 'exercise'];
+
+// remove the first element
+dailyActivities.shift();
+
+console.log(dailyActivities);
+
+// Output: [ 'eat', 'sleep', 'exercise' ]
+
+________________________________________________________________________________________________
+
+Array Methods : 
+
+JavaScript has various array methods to perform useful operations. Some commonly used array methods in JavaScript are:
+
+Method	            Description
+----------------------------------------------------------------------------------
+concat()	        Joins two or more arrays and returns a result.
+toString()	        Converts an array to a string of (comma-separated) array values.
+indexOf()	        Searches an element of an array and returns its position (index).
+find()	            Returns the first value of the array element that passes a given test.
+findIndex()	        Returns the first index of the array element that passes a given test.
+forEach()	        Calls a function for each element.
+includes()	        Checks if an array contains a specified element.
+sort()	            Sorts the elements alphabetically in strings and ascending order in numbers.
+slice()	            Selects part of an array and returns it as a new array.
+splice()	        Removes or replaces existing elements and/or adds new elements.
+
+________________________________________________________________________________________________
+
+JavaScript Array concat() : 
+
+The concat() method returns a new array by merging two or more values/arrays. 
+
+let primeNumbers = [2, 3, 5, 7]
+let evenNumbers = [2, 4, 6, 8]
+
+// join two arrays 
+let joinedArrays = primeNumbers.concat(evenNumbers);
+console.log(joinedArrays);
+
+/* Output:
+[
+  2, 3, 5, 7,
+  2, 4, 6, 8 
+]
+*/
+
+________________________________________________________________________________________________
+
+Javascript Array toString() : 
+
+The toString() method returns a string formed by the elements of the given array. 
+
+// defining an array
+let items = ["JavaScript", 1, "a", 3];
+
+// returns a string with elements of the array separated by commas
+let itemsString = items.toString();
+
+console.log(itemsString);
+
+// Output: 
+// JavaScript,1,a,3 
+
+________________________________________________________________________________________________
+
+JavaScript Array indexOf() : 
+
+The indexOf() method returns the first index of occurance of an array element, or -1 if it is not found. 
+
+let languages = ["Java", "JavaScript", "Python", "JavaScript"];
+
+// get the index of the first occurrence of "JavaScript"
+let index = languages.indexOf("JavaScript");
+console.log(index);
+
+// Output: 1 
+
+________________________________________________________________________________________________
+
+JavaScript Array find() : 
+
+The find() method returns the value of the first array element that satisfies the provided test function. 
+
+let numbers = [1, 3, 4, 9, 8];
+
+// function to check even number
+function isEven(element) {
+  return element % 2 == 0;
+}
+
+
+
+// get the first even number
+let evenNumber = numbers.find(isEven);
+console.log(evenNumber);
+
+// Output: 4 
+
+________________________________________________________________________________________________
+
+JavaScript Array findIndex() : 
+
+The findIndex() method returns the index of the first array 
+element that satisfies the provided test function or else returns -1.
+
+// function that returns odd number
+function isOdd(element) {
+  return element % 2 !== 0;
+}
+
+// defining an array of integers
+let numbers = [2, 8, 1, 3, 4];
+
+// returns the index of the first odd number in the array
+let firstOdd = numbers.findIndex(isOdd);
+
+console.log(firstOdd);
+
+// Output: 2 
+
+-----------------------------------------------------
+
+// function that returns even number
+function isEven(element) {
+  return element % 2 == 0;
+}
+
+// defining an array of integers
+let numbers = [1, 45, 8, 98, 7];
+
+// returns the index of the first even number in the array
+let firstEven = numbers.findIndex(isEven);
+
+console.log(firstEven); // 2
+
+________________________________________________________________________________________________
+
+Javascript Array forEach() : 
+
+The forEach() method executes a provided function for each array element. 
+
+let numbers = [1, 3, 4, 9, 8];
+
+// function to compute square of each number
+function computeSquare(element) {
+  console.log(element * element);
+}
+
+// compute square root of each element
+numbers.forEach(computeSquare);
+
+/* Output:
+1
+9 
+16
+81
+64
+*/ 
+
+________________________________________________________________________________________________
+
+JavaScript Array includes() : 
+
+The includes() method checks if an array contains a specified element or not. 
+
+// defining an array
+let languages = ["JavaScript", "Java", "C"];
+
+// checking whether the array contains 'Java'
+let check = languages.includes("Java");
+
+console.log(check); 
+
+// Output: true 
+
+________________________________________________________________________________________________
+
+JavaScript Array sort() : 
+
+The sort() method sorts the items of an array in a specific order (ascending or descending). 
+
+let city = ["California", "Barcelona", "Paris", "Kathmandu"];
+
+// sort the city array in ascending order
+let sortedArray = city.sort();
+console.log(sortedArray);
+
+// Output: [ 'Barcelona', 'California', 'Kathmandu', 'Paris' ] 
+
+let numArray = [3,56,3,45,7678,100,34,22,10]
+
+
+
+function ascending(a,b){
+
+  if(a < b){
+
+    return 1;
+  }
+  else{
+
+    return -1;
+  }
+
+}
+
+
+
+numArray.sort(ascending);
+________________________________________________________________________________________________
+
+JavaScript Array slice() : 
+
+The slice() method returns a shallow copy of a portion of an array into a new array object. 
+
+let numbers = [2, 3, 5, 7, 11, 13, 17];
+
+// create another array by slicing numbers from index 3 to 5
+let newArray = numbers.slice(3, 6);
+console.log(newArray);
+
+// Output: [ 7, 11, 13 ] 
+
+
+
+Example 2: JavaScript slice() With Negative index :
+
+In JavaScript, you can also use negative start and end indices. The index of the last element is -1, 
+the index of the second last element is -2, and so on.
+
+
+const languages = ["JavaScript", "Python", "C", "C++", "Java"];
+
+// slicing the array from start to second-to-last
+let new_arr = languages.slice(0, -1);
+console.log(new_arr); // [ 'JavaScript', 'Python', 'C', 'C++' ]
+
+// slicing the array from third-to-last
+let new_arr1 = languages.slice(-3);
+console.log(new_arr1); // [ 'C', 'C++', 'Java' ] 
+
+Output
+
+[ 'JavaScript', 'Python', 'C', 'C++' ]
+[ 'C', 'C++', 'Java' ]
+
+________________________________________________________________________________________________
+
+JavaScript Array splice() : 
+
+The splice() method modifies an array (adds, removes or replaces elements). 
+
+splice() Syntax : 
+
+arr.splice(start, deleteCount, item1, ..., itemN) : 
+
+
+
+let prime_numbers = [2, 3, 5, 7, 9, 11];
+
+// replace 1 element from index 4 by 13
+let removedElement = prime_numbers.splice(4, 1, 13);
+console.log(removedElement);
+console.log(prime_numbers);
+
+// Output: [ 9 ]
+//         [ 2, 3, 5, 7, 13, 11 ]
+
+
+Example : 
+
+let languages = ["JavaScript", "Python", "Java", "Lua"];
+
+// replacing "Java" & "Lua" with "C" & "C++"
+let removed = languages.splice(2, 2, "C", "C++");
+console.log(removed); // [ 'Java', 'Lua' ]
+console.log(languages); // [ 'JavaScript', 'Python', 'C', 'C++' ]
+
+// adding elements without deleting existing elements
+let removed1 = languages.splice(1, 0, "Java", "Lua");
+console.log(removed1); // []
+console.log(languages); // [ 'JavaScript', 'Java', 'Lua', 'Python', 'C', 'C++' ]
+
+// removing 3 elements
+let removed2 = languages.splice(2, 3);
+console.log(removed2); // [ 'Lua', 'Python', 'C' ]
+console.log(languages); // [ 'JavaScript', 'Java', 'C++' ]
+
+
+----------------------------------------------------------------------------------------------------------------
+
+// Join Method In Javascript : 
+
+let myArray = [1,2,3,4];
+
+let newStr = myArray.join("$");// 1$2$3$4--->string
+
+console.log(newStr);
+
+
+// split Method in Javascript : 
+
+
+let userStr = prompt("Enter coma seprated values");
+
+let newArray = userStr.split("a");//rohan is a good boy---->["roh","n is","good boy"]
+
+console.log(newArray);
+
+________________________________________________________________________________________________
+________________________________________________________________________________________________
